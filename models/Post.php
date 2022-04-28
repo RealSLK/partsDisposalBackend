@@ -109,7 +109,7 @@
                       warrantyTagName, 
                       partsNote,
                       partCollected
-                                FROM loggingMaster ORDER BY id DESC LIMIT 30';
+                                FROM loggingMaster ORDER BY id DESC LIMIT 100';
       
       // Prepare statement
       $stmt = $this->conn->prepare($query);
