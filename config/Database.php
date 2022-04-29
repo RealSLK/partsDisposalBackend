@@ -1,10 +1,10 @@
 <?php 
   class Database {
     // DB Params
-    private $host = 'localhost'; //partscollectiondb.c3so2xarqjh9.us-east-1.rds.amazonaws.com
+    private $host = 'partscollectiondb.c3so2xarqjh9.us-east-1.rds.amazonaws.com'; //localhost
     private $db_name = 'partsdisposaldb';
     private $username = 'root';
-    private $password = '@Waidler2018'; //Waidler123
+    private $password = 'Waidler123'; //@Waidler2018
     private $conn;
 
     // DB Connect
