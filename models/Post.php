@@ -81,8 +81,7 @@
                       partNumberName, 
                       partOverviewName, 
                       warrantyTagName, 
-                      partsNote,
-                      partCollected
+                      partsNote
                                 FROM loggingMaster WHERE dealerCode = "' . $this->dealerID . '"';
       
       // Prepare statement
@@ -97,7 +96,7 @@
     // Get Parts
     public function read() {
       // Read query
-      $query = 'SELECT id,
+      $query = 'SELECT 
                       dealerCode,
                       vinNumber,
                       partNumber, 
@@ -107,8 +106,7 @@
                       partNumberName, 
                       partOverviewName, 
                       warrantyTagName, 
-                      partsNote,
-                      partCollected
+                      partsNote
                                 FROM loggingMaster ORDER BY id DESC LIMIT 100';
       
       // Prepare statement
@@ -178,8 +176,7 @@
                                                         partNumberName = :partNumberName, 
                                                         partOverviewName = :partOverviewName, 
                                                         warrantyTagName = :warrantyTagName, 
-                                                        partsNote = :partsNote,
-                                                        partCollected = :partCollected';
+                                                        partsNote = :partsNote';
 
           // Prepare statement
           $stmt = $this->conn->prepare($query);
@@ -198,7 +195,6 @@
           $stmt->bindParam(':partOverviewName', $this->partOverviewName);
           $stmt->bindParam(':warrantyTagName', $this->warrantyTagName);
           $stmt->bindParam(':partsNote', $this->partsNote);
-          $stmt->bindParam(':partCollected', $this->partCollected);
 
           // Execute query
           if($stmt->execute()) {

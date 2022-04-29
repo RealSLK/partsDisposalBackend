@@ -31,7 +31,6 @@
   $parts->partOverviewName = $data->partOverviewName;
   $parts->warrantyTagName = $data->warrantyTagName;
   $parts->partsNote = $data->partsNote;
-  $parts->partCollected = $data->partCollected;
 
   // Create part
   if($parts->createLogging()) {

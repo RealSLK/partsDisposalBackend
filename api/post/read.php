@@ -28,7 +28,7 @@
       extract($row);
 
       $parts_item = array(
-        'id' => $id,
+        'dealerCode' => $dealerCode,
         'vinNumber' => $vinNumber,
         'partNumber' => $partNumber,
         'partsQuantity' => $partsQuantity,
@@ -38,7 +38,6 @@
         'partOverviewName' => $partOverviewName,
         'warrantyTagName' => $warrantyTagName,
         'partsNote' => $partsNote,
-        'partCollected' => $partCollected
       );
 
       // Push to "data"
