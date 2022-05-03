@@ -32,6 +32,12 @@
   $parts->warrantyTagName = $data->warrantyTagName;
   $parts->partsNote = $data->partsNote;
 
+    /*if(empty($data->dealerCode)) {
+    echo json_encode(
+      array('message' => 'Can not submit black entry')
+    );
+  }*/
+
   // Create part
   if($parts->createLogging()) {
     echo json_encode(
