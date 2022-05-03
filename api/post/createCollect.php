@@ -33,6 +33,12 @@
   $parts->partsNote = $data->partsNote;
   $parts->partCollected = $data->partCollected;
 
+  /*if(empty($data->dealerCode)) {
+    echo json_encode(
+      array('message' => 'Can not submit black entry')
+    );
+  }*/
+
   // Create part
   if($parts->createCollect()) {
     echo json_encode(

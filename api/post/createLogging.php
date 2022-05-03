@@ -33,7 +33,7 @@
   $parts->partsNote = $data->partsNote;
 
   // Create part
-  if($parts->createCollect()) {
+  if($parts->createLogging()) {
     echo json_encode(
       array('message' => 'Part entry Created')
     );

@@ -57,7 +57,7 @@
                       warrantyTagName, 
                       partsNote,
                       partCollected
-                                FROM collectionMaster WHERE dealerCode = "' . $this->dealerID . '"';
+                                FROM collectionmaster WHERE dealerCode = "' . $this->dealerID . '"';
       
       // Prepare statement
       $stmt = $this->conn->prepare($query);
@@ -82,7 +82,7 @@
                       partOverviewName, 
                       warrantyTagName, 
                       partsNote
-                                FROM loggingMaster WHERE dealerCode = "' . $this->dealerID . '"';
+                                FROM loggingmaster WHERE dealerCode = "' . $this->dealerID . '"';
       
       // Prepare statement
       $stmt = $this->conn->prepare($query);
@@ -107,7 +107,7 @@
                       partOverviewName, 
                       warrantyTagName, 
                       partsNote
-                                FROM loggingMaster ORDER BY id DESC LIMIT 100';
+                                FROM loggingmaster ORDER BY id DESC LIMIT 100';
       
       // Prepare statement
       $stmt = $this->conn->prepare($query);
@@ -118,10 +118,10 @@
       return $stmt;
     }
 
-    // Create Part entry
+    // Create part in collection database
     public function createCollect() {
       // Create query
-      $query = 'INSERT INTO collectionMaster SET partNumberImg = :partNumberImg, 
+      $query = 'INSERT INTO collectionmaster SET partNumberImg = :partNumberImg, 
                                                     partOverviewImg = :partOverviewImg, 
                                                     warrantyTagImg = :warrantyTagImg, 
                                                     dealerCode = :dealerCode, 
@@ -161,51 +161,51 @@
   }
 }
 
-    // Create Part entry
+    // Create part in collection database
     public function createLogging() {
-          // Create query
-          $query = 'INSERT INTO loggingMaster SET partNumberImg = :partNumberImg, 
-                                                        partOverviewImg = :partOverviewImg, 
-                                                        warrantyTagImg = :warrantyTagImg, 
-                                                        dealerCode = :dealerCode, 
-                                                        vinNumber = :vinNumber, 
-                                                        partNumber = :partNumber, 
-                                                        partsQuantity = :partsQuantity, 
-                                                        repairOrder = :repairOrder, 
-                                                        partName = :partName, 
-                                                        partNumberName = :partNumberName, 
-                                                        partOverviewName = :partOverviewName, 
-                                                        warrantyTagName = :warrantyTagName, 
-                                                        partsNote = :partsNote';
+      // Create query
+      $query = 'INSERT INTO loggingmaster SET partNumberImg = :partNumberImg, 
+                                                    partOverviewImg = :partOverviewImg, 
+                                                    warrantyTagImg = :warrantyTagImg, 
+                                                    dealerCode = :dealerCode, 
+                                                    vinNumber = :vinNumber, 
+                                                    partNumber = :partNumber, 
+                                                    partsQuantity = :partsQuantity, 
+                                                    repairOrder = :repairOrder, 
+                                                    partName = :partName, 
+                                                    partNumberName = :partNumberName, 
+                                                    partOverviewName = :partOverviewName, 
+                                                    warrantyTagName = :warrantyTagName, 
+                                                    partsNote = :partsNote;';
 
-          // Prepare statement
-          $stmt = $this->conn->prepare($query);
+      // Prepare statement
+      $stmt = $this->conn->prepare($query);
 
-          // Bind data
-          $stmt->bindParam(':partNumberImg', $this->partNumberImg); 
-          $stmt->bindParam(':partOverviewImg', $this->partOverviewImg);
-          $stmt->bindParam(':warrantyTagImg', $this->warrantyTagImg);
-          $stmt->bindParam(':dealerCode', $this->dealerCode);
-          $stmt->bindParam(':vinNumber', $this->vinNumber);
-          $stmt->bindParam(':partNumber', $this->partNumber);
-          $stmt->bindParam(':partsQuantity', $this->partsQuantity);
-          $stmt->bindParam(':repairOrder', $this->repairOrder);
-          $stmt->bindParam(':partName', $this->partName);
-          $stmt->bindParam(':partNumberName', $this->partNumberName);
-          $stmt->bindParam(':partOverviewName', $this->partOverviewName);
-          $stmt->bindParam(':warrantyTagName', $this->warrantyTagName);
-          $stmt->bindParam(':partsNote', $this->partsNote);
+      // Bind data
+      $stmt->bindParam(':partNumberImg', $this->partNumberImg); 
+      $stmt->bindParam(':partOverviewImg', $this->partOverviewImg);
+      $stmt->bindParam(':warrantyTagImg', $this->warrantyTagImg);
+      $stmt->bindParam(':dealerCode', $this->dealerCode);
+      $stmt->bindParam(':vinNumber', $this->vinNumber);
+      $stmt->bindParam(':partNumber', $this->partNumber);
+      $stmt->bindParam(':partsQuantity', $this->partsQuantity);
+      $stmt->bindParam(':repairOrder', $this->repairOrder);
+      $stmt->bindParam(':partName', $this->partName);
+      $stmt->bindParam(':partNumberName', $this->partNumberName);
+      $stmt->bindParam(':partOverviewName', $this->partOverviewName);
+      $stmt->bindParam(':warrantyTagName', $this->warrantyTagName);
+      $stmt->bindParam(':partsNote', $this->partsNote);
 
-          // Execute query
-          if($stmt->execute()) {
-            return true;
-      }
-    }
+      // Execute query
+      if($stmt->execute()) {
+        return true;
+  }
+}
 
     // Update part
     public function update() {
       // update query
-      $query = 'UPDATE collectionMaster
+      $query = 'UPDATE collectionmaster
                             SET partNumberImg = :partNumberImg, 
                             partOverviewImg = :partOverviewImg, 
                             warrantyTagImg = :warrantyTagImg, 
