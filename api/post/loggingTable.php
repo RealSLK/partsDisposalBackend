@@ -33,6 +33,7 @@
       extract($row);
 
       $parts_item = array(
+        'id' => $id,
         'partNumberImg' => $partNumberImg,
         'partOverviewImg' => $partOverviewImg,
         'warrantyTagImg' => $warrantyTagImg,
