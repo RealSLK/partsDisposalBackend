@@ -36,6 +36,7 @@
         'partNumberImg' => $partNumberImg,
         'partOverviewImg' => $partOverviewImg,
         'warrantyTagImg' => $warrantyTagImg,
+        'dealerCode' => $dealerCode,
         'vinNumber' => $vinNumber,
         'partNumber' => $partNumber,
         'partsQuantity' => $partsQuantity,
@@ -44,8 +45,7 @@
         'partNumberName' => $partNumberName,
         'partOverviewName' => $partOverviewName,
         'warrantyTagName' => $warrantyTagName,
-        'partsNote' => $partsNote,
-        'partCollected' => $partCollected
+        'partsNote' => $partsNote
       );
 
       // Push to "data"
