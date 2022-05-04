@@ -71,7 +71,9 @@
     // Get specific dealer Parts
     public function loggingTable() {
       // filter query
-      $query = 'SELECT id,
+      $query = 'SELECT partNumberImg,
+                      partOverviewImg,
+                      warrantyTagImg,
                       dealerCode,
                       vinNumber,
                       partNumber, 
