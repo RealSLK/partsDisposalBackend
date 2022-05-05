@@ -72,9 +72,6 @@
     public function loggingTable() {
       // filter query
       $query = 'SELECT id,
-                      partNumberImg,
-                      partOverviewImg,
-                      warrantyTagImg,
                       dealerCode,
                       vinNumber,
                       partNumber, 
@@ -86,6 +83,22 @@
                       warrantyTagName, 
                       partsNote
                                 FROM loggingmaster WHERE dealerCode = "' . $this->dealerID . '" ORDER BY id DESC LIMIT 50';
+      
+      // Prepare statement
+      $stmt = $this->conn->prepare($query);
+
+      // Execute query
+      $stmt->execute();
+
+      return $stmt;
+    }
+    // Get images
+    public function getImages() {
+      // Read query
+      $query = 'SELECT partNumberImg,
+                      partOverviewImg,
+                      warrantyTagImg
+                                FROM loggingmaster WHERE id = "' . $this->id . '"';
       
       // Prepare statement
       $stmt = $this->conn->prepare($query);

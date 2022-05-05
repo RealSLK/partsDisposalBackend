@@ -4,7 +4,7 @@
   header('Content-Type: application/json');
   header('Access-Control-Allow-Methods: POST');
   header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
-
+  
   include_once '../../config/Database.php';
   include_once '../../models/Post.php';
 
@@ -12,14 +12,14 @@
   $database = new Database();
   $db = $database->connect();
 
-  // Instantiate parts object 
+  // Instantiate part object
   $parts = new Parts($db);
 
   $data = json_decode(file_get_contents("php://input"));
-  $parts->dealerID = $data->dealerID;
+  $parts->id = $data->id;
 
   // Parts query
-  $result = $parts->loggingTable();
+  $result = $parts->getImages();
   // Get row count
   $num = $result->rowCount();
 
@@ -34,16 +34,9 @@
 
       $parts_item = array(
         'id' => $id,
-        'dealerCode' => $dealerCode,
-        'vinNumber' => $vinNumber,
-        'partNumber' => $partNumber,
-        'partsQuantity' => $partsQuantity,
-        'repairOrder' => $repairOrder,
-        'partName' => $partName,
-        'partNumberName' => $partNumberName,
-        'partOverviewName' => $partOverviewName,
-        'warrantyTagName' => $warrantyTagName,
-        'partsNote' => $partsNote
+        'partNumberImg' => $partNumberImg,
+        'partOverviewImg' => $partOverviewImg,
+        'warrantyTagImg' => $warrantyTagImg,
       );
 
       // Push to "data"
@@ -57,8 +50,8 @@
   } else {
     // No Parts
     echo json_encode(
-      array('message' => 'No parts found in ' .  $data->dealerID) //
+      array('message' => 'No Images Found')
     );
   }
 
-?> 
+?>
