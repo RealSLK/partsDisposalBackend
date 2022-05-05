@@ -85,7 +85,7 @@
                       partOverviewName, 
                       warrantyTagName, 
                       partsNote
-                                FROM loggingmaster WHERE dealerCode = "' . $this->dealerID . '"';
+                                FROM loggingmaster WHERE dealerCode = "' . $this->dealerID . '" ORDER BY id DESC LIMIT 50';
       
       // Prepare statement
       $stmt = $this->conn->prepare($query);
