@@ -33,7 +33,6 @@
       extract($row);
 
       $parts_item = array(
-        'id' => $id,
         'partNumberImg' => $partNumberImg,
         'partOverviewImg' => $partOverviewImg,
         'warrantyTagImg' => $warrantyTagImg,
@@ -49,9 +48,7 @@
 
   } else {
     // No Parts
-    echo json_encode(
-      array('message' => 'No Images Found')
-    );
+    echo ('No records found.');
   }
 
 ?>

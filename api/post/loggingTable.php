@@ -56,9 +56,7 @@
 
   } else {
     // No Parts
-    echo json_encode(
-      array('message' => 'No parts found in ' .  $data->dealerID) //
-    );
+    echo ('No parts found in ' .  $data->dealerID);
   }
 
 ?> 
