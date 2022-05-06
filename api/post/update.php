@@ -32,12 +32,9 @@
 
   // Update part
   if($parts->update()) {
-    echo json_encode(
-      array('message' => 'Part ' . $data->id . ' Updated')
-    );
+    echo ('Updating part #' . $data->id);
   } else {
-    echo json_encode(
-      array('message' => 'Part Not Updated')
-    );
+    echo ('Part Not Updated');
   }
 
+?>
