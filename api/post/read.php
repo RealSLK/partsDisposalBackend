@@ -50,9 +50,7 @@
 
   } else {
     // No Parts
-    echo json_encode(
-      array('message' => 'No Parts Found')
-    );
+    echo ('No Parts Found');
   }
 
 ?>

@@ -48,7 +48,7 @@
 
   } else {
     // No Parts
-    echo ('No records found.');
+    echo ('No images found.');
   }
 
 ?>

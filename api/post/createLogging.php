@@ -44,9 +44,7 @@
       array('message' => 'Part entry Created')
     );
   } else {
-    echo json_encode(
-      array('message' => 'Part entry Not Created')
-    );
+    echo ('Part creation unsuccessful');
   }
 
 ?>
