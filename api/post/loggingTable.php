@@ -56,7 +56,7 @@
 
   } else {
     // No Parts
-    echo ('No parts found in ' .  $data->dealerID);
+    echo ('No parts found under dealer code: ' .  $data->dealerID);
   }
 
 ?> 
