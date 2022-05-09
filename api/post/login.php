@@ -29,12 +29,10 @@
   // Create part
   if($num > 0) {
     echo json_encode(
-      array('success')
+      array('message' => 'success')
     );
   } else {
-    echo json_encode(
-      array('message' => 'Incorrect username password combination!')
-    );
+    echo json_encode('Incorrect username password combination!');
   }
 
 ?>
