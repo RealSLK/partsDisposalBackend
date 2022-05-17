@@ -12,6 +12,12 @@
   $database = new Database();
   $db = $database->connect();
 
+  //Generate a random string.
+  $token = openssl_random_pseudo_bytes(16);
+  
+  //Convert the binary data into hexadecimal representation.
+  $token = bin2hex($token);
+
   // Instantiate parts object
   $parts = new Parts($db);
 
@@ -28,11 +34,9 @@
 
   // Create part
   if($num > 0) {
-    echo json_encode(
-      array('message' => 'success')
-    );
+    $token;
   } else {
-    echo json_encode('Incorrect username password combination!');
+    echo json_encode('Incorrect');
   }
 
 ?>
