@@ -52,7 +52,6 @@
                       partsQuantity, 
                       repairOrder, 
                       partName, 
-                      partNumberName, 
                       partOverviewName, 
                       warrantyTagName, 
                       partsNote,
@@ -137,7 +136,7 @@
     // Create part in collection database
     public function createCollect() {
       // Create query
-      $query = 'INSERT INTO collectionmaster SET partNumberImg = :partNumberImg, 
+      $query = 'INSERT INTO collectionmaster SET  
                                                     partOverviewImg = :partOverviewImg, 
                                                     warrantyTagImg = :warrantyTagImg, 
                                                     dealerCode = :dealerCode, 
@@ -145,8 +144,7 @@
                                                     partNumber = :partNumber, 
                                                     partsQuantity = :partsQuantity, 
                                                     repairOrder = :repairOrder, 
-                                                    partName = :partName, 
-                                                    partNumberName = :partNumberName, 
+                                                    partName = :partName,  
                                                     partOverviewName = :partOverviewName, 
                                                     warrantyTagName = :warrantyTagName, 
                                                     partsNote = :partsNote,
@@ -156,7 +154,6 @@
       $stmt = $this->conn->prepare($query);
 
       // Bind data
-      $stmt->bindParam(':partNumberImg', $this->partNumberImg); 
       $stmt->bindParam(':partOverviewImg', $this->partOverviewImg);
       $stmt->bindParam(':warrantyTagImg', $this->warrantyTagImg);
       $stmt->bindParam(':dealerCode', $this->dealerCode);
@@ -165,7 +162,6 @@
       $stmt->bindParam(':partsQuantity', $this->partsQuantity);
       $stmt->bindParam(':repairOrder', $this->repairOrder);
       $stmt->bindParam(':partName', $this->partName);
-      $stmt->bindParam(':partNumberName', $this->partNumberName);
       $stmt->bindParam(':partOverviewName', $this->partOverviewName);
       $stmt->bindParam(':warrantyTagName', $this->warrantyTagName);
       $stmt->bindParam(':partsNote', $this->partsNote);
@@ -222,10 +218,9 @@
     public function update() {
       // update query
       $query = 'UPDATE collectionmaster
-                            SET partNumberImg = :partNumberImg, 
+                            SET  
                             partOverviewImg = :partOverviewImg, 
                             warrantyTagImg = :warrantyTagImg, 
-                            partNumberName = :partNumberName, 
                             partOverviewName = :partOverviewName, 
                             warrantyTagName = :warrantyTagName, 
                             partsNote = :partsNote, 
@@ -237,10 +232,8 @@
 
       // Bind data
       //$stmt->bindParam(':id', $this->id);
-      $stmt->bindParam(':partNumberImg', $this->partNumberImg);
       $stmt->bindParam(':partOverviewImg', $this->partOverviewImg);
       $stmt->bindParam(':warrantyTagImg', $this->warrantyTagImg);
-      $stmt->bindParam(':partNumberName', $this->partNumberName);
       $stmt->bindParam(':partOverviewName', $this->partOverviewName);
       $stmt->bindParam(':warrantyTagName', $this->warrantyTagName);
       $stmt->bindParam(':partsNote', $this->partsNote);
