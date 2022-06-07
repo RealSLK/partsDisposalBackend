@@ -35,6 +35,7 @@
   // Create part
   if($num > 0) {
     echo json_encode($token);
+    //array('token' => $token);
   } else {
     echo json_encode('Incorrect');
   }
