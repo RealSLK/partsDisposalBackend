@@ -32,37 +32,8 @@
   $parts->warrantyTagName = $data->warrantyTagName;
   $parts->partsNote = $data->partsNote;
 
-  /*<?php
-
-if( isset($_POST['submit']) )
-{
-    $prefix     =   $_POST['prefix'];
-    $firstname  =   $_POST['firstname'];
-    $lastname   =   $_POST['lastname'];
-    $phone      =   $_POST['phone'];
-    $school     =   $_POST['school'];
-    $teammate1  =   $_POST['teammate1'];
-    $teammate2  =   $_POST['teammate2'];
-    $games      =   $_POST['games'];
-    $division   =   $_POST['division'];
-
-    mysql_connect("localhost", "acsp", "passwordhidden");
-    mysql_select_db("logicgames");
-    $order = "INSERT INTO data_logicgames (prefix, firstname, lastname, phone, school, teammate1, teammate2, games, division) VALUES ('$prefix', '$firstname', '$lastname', '$phone', '$school', '$teammate1', '$teammate2', '$games', '$division')";
-    $result = mysql_query($order);
-    if ($result) {
-        echo "<p>Success</p>";
-    } else {
-        echo "<p>Failed</p>";
-    }
-}
-else
-{
-    echo "<p>Failed</p>";
-}
-?>*/
-
-  // Create part
+  
+// Create part
   if($parts->createLogging()) {
     echo json_encode(
       array('message' => 'Part entry Created')
@@ -70,5 +41,4 @@ else
   } else {
     echo ('Part creation unsuccessful');
   }
-
 ?>

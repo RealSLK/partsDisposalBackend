@@ -176,7 +176,8 @@
     // Create part in collection database
     public function createLogging() {
       // Create query
-      $query = 'INSERT INTO loggingmaster SET partNumberImg = :partNumberImg, 
+      if($this->dealerCode != null){
+        $query = 'INSERT INTO loggingmaster SET partNumberImg = :partNumberImg, 
                                                     partOverviewImg = :partOverviewImg, 
                                                     warrantyTagImg = :warrantyTagImg, 
                                                     dealerCode = :dealerCode, 
@@ -189,6 +190,8 @@
                                                     partOverviewName = :partOverviewName, 
                                                     warrantyTagName = :warrantyTagName, 
                                                     partsNote = :partsNote;';
+      }
+      
 
       // Prepare statement
       $stmt = $this->conn->prepare($query);

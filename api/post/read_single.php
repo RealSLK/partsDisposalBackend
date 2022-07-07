@@ -38,3 +38,5 @@
 
   // Make JSON
   print_r(json_encode($parts_arr));
+
+  ?>
