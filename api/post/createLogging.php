@@ -34,7 +34,7 @@
 
   
 // Create part
-  if($parts->createLogging()) {
+  if($parts->createLogging() !== null) {
     echo json_encode(
       array('message' => 'Part entry Created')
     );

@@ -173,10 +173,10 @@
   }
 }
 
-    // Create part in collection database
+    // Create part in logging database
     public function createLogging() {
       // Create query
-      if($this->dealerCode != null){
+      
         $query = 'INSERT INTO loggingmaster SET partNumberImg = :partNumberImg, 
                                                     partOverviewImg = :partOverviewImg, 
                                                     warrantyTagImg = :warrantyTagImg, 
@@ -190,7 +190,6 @@
                                                     partOverviewName = :partOverviewName, 
                                                     warrantyTagName = :warrantyTagName, 
                                                     partsNote = :partsNote;';
-      }
       
 
       // Prepare statement
