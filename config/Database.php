@@ -4,7 +4,7 @@
     private $host = 'partscollectiondb.c3so2xarqjh9.us-east-1.rds.amazonaws.com'; // localhost
     private $db_name = 'partsdisposaldb';
     private $username = 'root';
-    private $password = 'Waidler123'; //@Waidler2018
+    private $password = 'Waidler123'; // @Waidler2018
     private $conn;
 
     // DB Connect
